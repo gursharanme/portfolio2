@@ -2,6 +2,11 @@
 
 @import "tailwindcss";
 
+@font-face{
+  font-family: "Nohemi";
+  src: url("./nohemi/Nohemi-Regular.woff2");
+}
+
 @theme {
   --font-primary: "Inter";
 }

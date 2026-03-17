@@ -8,21 +8,21 @@ const Hero = () => {
 
   const { scrollY } = useScroll();
 
-  const scale = useTransform(scrollY, [0, 300], [1, 0.93]);
+  const scale = useTransform(scrollY, [0, 300], [1, 0.92]);
   const radius = useTransform(scrollY, [0, 50], [0,12])
   return (
     <section className="">
       <div className="flex items-end justify-between max-w-full overflow-hidden px-4 md:px-8 xl:px-12 p-2">
         {/* text */}
-        <div className="flex flex-col gap-4 mt-10 md:mt-14 max-w-195 xl:max-w-215">
-          <h1 className="text-neutral-900 text-[52px] md:text-[64px] xl:text-[76px] 2xl:text-[88px] font-semibold leading-[1.04] tracking-[-0.01em]">
+        <div className="flex flex-col gap-4 mt-16 md:mt-24 max-w-195 xl:max-w-215">
+          <h1 className="text-neutral-900 text-[54px] md:text-[64px] xl:text-[76px] 2xl:text-[88px] font-semibold leading-[1.04] tracking-[-0.01em]">
             Building High-Performance Web Interfaces with React
           </h1>
 
           <p className="text-neutral-500 text-lg md:text-xl xl:text-[22px] leading-[1.56em] max-w-164">
-            Frontend Developer specializing in React, Tailwind CSS, and modern
-            JavaScript, focused on scalable architecture, clean UI, and seamless
-            user experiences.
+            Frontend Developer focused on building scalable, high-performance
+            web interfaces with clean architecture, intuitive design, and
+            refined user experiences.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ const Hero = () => {
       {/* video */}
       <motion.div
         style={{ scale: scale }}
-        className="relative w-full mt-1.5 md:mt-4 xl:mt-6 pb-16 md:pb-20 lg:pb-24"
+        className="relative w-full mt-4 md:mt-6 xl:mt-8 pb-16 md:pb-20 lg:pb-24"
       >
         <div>
           <motion.video

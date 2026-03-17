@@ -58,11 +58,11 @@ const Navbar = () => {
             <img
               src="./Gursharan Singh.jpg"
               alt=""
-              className="w-12 h-12 rounded-full"
+              className="w-11 h-11 md:w-12 md:h-12 rounded-full"
             />
           </Link>
 
-          <div className="flex flex-col font-medium text-neutral-900">
+          <div className="flex text-sm md:text-base flex-col font-medium text-neutral-900">
             <span>Available for</span>
             <div className="text-neutral-400 flex items-center gap-2">
               Job / Freelance
@@ -113,6 +113,7 @@ const Navbar = () => {
             ariaLabel="Open Menu"
             title="Menu"
             onClick={openMenu}
+            className="text-sm"
           />
         </div>
       </motion.header>
@@ -145,6 +146,7 @@ const Navbar = () => {
                   ariaLabel="Close Menu"
                   title="Close"
                   onClick={closeMenu}
+                  className="text-sm"
                 />
               </header>
 
