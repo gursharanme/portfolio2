@@ -138,7 +138,7 @@ const Services = () => {
                         {service.points.map((point, i) => (
                           <span
                             key={i}
-                            className="bg-neutral-100 hover:bg-neutral-900 hover:text-neutral-100 transition-colors px-3 py-1.5 rounded-full text-xs md:text-sm"
+                            className="bg-neutral-100 hover:bg-neutral-900 hover:text-neutral-100 transition-colors px-3 py-1.5 rounded-full text-xs md:text-sm font-mono"
                           >
                             {point}
                           </span>
