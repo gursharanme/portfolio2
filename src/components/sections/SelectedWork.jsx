@@ -1,3 +1,4 @@
+import { link } from "motion/react-client";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -39,7 +40,7 @@ const project = [
 
 const SelectedWork = () => {
   return (
-    <section className="px-4 md:px-8 xl:px-12 py-16 md:py-20 lg:py-24 bg-neutral-900 text-neutral-100">
+    <section id="work" className="px-4 md:px-8 xl:px-12 py-16 md:py-20 lg:py-24 bg-neutral-900 text-neutral-100">
       <div className="flex items-end justify-between">
         <h2 className="text-[48px] md:text-[60px] xl:text-[72px] 2xl:text-[84px] font-semibold leading-[1.04] tracking-[-0.001em]">
           Selected Work
@@ -53,8 +54,9 @@ const SelectedWork = () => {
         {project.map((project, id) => (
           <div
             key={id}
-            className="bg-neutral-100 text-neutral-900 font-semibold p-4 md:p-6 rounded-2xl group transition-all duration-300 flex flex-col"
+            className="group bg-neutral-100 text-neutral-900 p-4 md:p-6 rounded-2xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
+            {/* Image */}
             <Link
               to={project.url}
               target="_blank"
@@ -65,40 +67,41 @@ const SelectedWork = () => {
                 src={project.imageSrc}
                 alt={project.projectName}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 will-change-transform group-hover:scale-[1.04]"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
               />
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-neutral-900/50 flex items-center justify-center">
-                <div className="bg-neutral-100 w-18 h-18 flex items-center justify-center rounded-full uppercase font-semibold transform scale-90 group-hover:scale-100 transition">
+              {/* Overlay */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-neutral-900/60 flex items-center justify-center">
+                <div className="bg-neutral-100 text-neutral-900 w-18 h-18 flex items-center justify-center rounded-full font-semibold tracking-tight scale-90 group-hover:scale-100 transition duration-300 uppercase">
                   Visit
                 </div>
               </div>
             </Link>
 
             {/* Title + Year */}
-            <div className="flex items-baseline justify-between mt-4">
-              <h3 className="text-[30px] md:text-[40px] xl:text-[50px] font-semibold tracking-[-0.01em]">
+            <div className="flex items-start justify-between mt-4 gap-4">
+              <h3 className="text-[28px] md:text-[36px] xl:text-[44px] font-semibold tracking-[-0.015em] leading-[1.1]">
                 <Link
                   to={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:underline underline-offset-4 decoration-neutral-200"
                 >
                   {project.projectName}
                 </Link>
               </h3>
 
-              <p className="text-xs md:text-sm text-neutral-400">
+              <p className="text-xs md:text-sm text-neutral-400 whitespace-nowrap mt-2">
                 {project.year}
               </p>
             </div>
 
             {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2 mt-2">
+            <div className="flex flex-wrap gap-2 mt-3">
               {project.techStack.map((stack, idx) => (
                 <span
                   key={idx}
-                  className="bg-neutral-200/80 backdrop-blur rounded-full px-3 py-1 text-xs font-medium"
+                  className="bg-neutral-200/80 backdrop-blur px-3 py-1 rounded-full text-xs md:text-sm text-neutral-700 group-hover:bg-neutral-200 transition"
                 >
                   {stack}
                 </span>
@@ -106,35 +109,40 @@ const SelectedWork = () => {
             </div>
 
             {/* Description */}
-            <p className="text-neutral-600 mt-3 md:text-base leading-relaxed font-normal line-clamp-3 mb-3">
+            <p className="text-neutral-600 mt-4 text-sm md:text-base leading-[1.6] line-clamp-3">
               {project.intro}
             </p>
 
-            {/* GitHub */}
-            <div className="flex items-center gap-2 justify-start mt-auto">
-              <Link
-                to={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition"
-              >
-                <img
-                  src="./web.png"
-                  alt="View source code"
-                  className="size-6"
-                />
-              </Link>
-              <Link
-                to={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition"
-              >
-                <img
-                  src="./github.png"
-                  alt="View source code"
-                  className="size-6"
-                />
+            {/* Footer */}
+            <div className="flex items-center justify-between mt-auto pt-5">
+              {/* Links */}
+              <div className="flex items-center gap-3">
+                <Link
+                  to={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-60 hover:opacity-100 hover:scale-110 transition"
+                >
+                  <img src="./web.png" alt="Live site" className="size-6" />
+                </Link>
+
+                <Link
+                  to={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-60 hover:opacity-100 hover:scale-110 transition"
+                >
+                  <img
+                    src="./github.png"
+                    alt="GitHub repo"
+                    className="size-6"
+                  />
+                </Link>
+              </div>
+
+              {/* Subtle CTA */}
+              <Link to={project.url} target="_blank" className="text-xs text-neutral-400 group-hover:text-neutral-700 transition">
+                View Project →
               </Link>
             </div>
           </div>

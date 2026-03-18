@@ -19,7 +19,7 @@ const Hero = () => {
             Building High-Performance Web Interfaces with React
           </h1>
 
-          <p className="text-neutral-500 text-lg md:text-xl xl:text-[22px] leading-[1.56em] max-w-164">
+          <p className="text-neutral-500 text-[17px] md:text-lg xl:text-xl leading-[1.7] max-w-164">
             Frontend Developer focused on building scalable, high-performance
             web interfaces with clean architecture, intuitive design, and
             refined user experiences.

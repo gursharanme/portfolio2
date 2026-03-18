@@ -6,7 +6,7 @@ import SecondaryButton from "../ui/SecondaryButton";
 
 const NAV_LINKS = [
   { name: "Home", path: "/" },
-  { name: "Work", path: "/work" },
+  { name: "Work", path: "/#work" },
   { name: "Services", path: "/#services" },
   { name: "About", path: "/#about" },
   { name: "Contact", path: "/#contact" },
